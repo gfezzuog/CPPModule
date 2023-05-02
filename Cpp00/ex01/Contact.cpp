@@ -37,6 +37,6 @@ void Contact::SetThings()
 	std::cin>>this->Nickname;
 	std::cout<<"Gimme the phone number"<<std::endl;
 	std::cin>>this->PhoneNumber;
-	std::cout<<"Now... tell me your deepest secre"<<std::endl;
+	std::cout<<"Now... tell me your deepest secret"<<std::endl;
 	std::cin>>this->DarkestSecret;
 }

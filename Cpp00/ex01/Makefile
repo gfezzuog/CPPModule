@@ -1,10 +1,12 @@
-NAME = Megaphone
+NAME = PhoneBook
 
 CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-FILES = Megaphone.cpp \
+FILES = Contact.cpp  \
+		PhoneBook.cpp \
+		main.cpp	   \
 
 OBJ = $(FILES:.cpp=.o)
 
