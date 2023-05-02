@@ -9,8 +9,11 @@ class Contact
         std::string PhoneNumber;
         std::string DarkestSecret;
     public:
-		void set_things();
-        void set_name();
-        void get_name();
-        void get_things();
+		void SetThings();
+        std::string GetName();
+        std::string GetLastName();
+        std::string GetNickName();
+        std::string GetNumber();
+        std::string GetDarkestSecret();
+  
 };

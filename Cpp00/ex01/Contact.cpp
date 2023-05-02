@@ -1,65 +1,42 @@
 #include "Contact.hpp"
 #include <ctype.h>
 
-int check_name(std::string value)
-{
-	int i = 0;
 
-	while(value[i])
-	{
-		if(isalpha(value[i]) == 0)
-			return(1);
-		i++;
-	}
-	return(0);
+std::string Contact::GetName()
+{
+	return(this->Name);
 }
 
-int check_number(std::string value)
+std::string Contact::GetLastName()
 {
-	int i = 0;
-
-	while(value[i])
-	{
-		if(isdiit(value[i] + 48) == 0) return(1);
-		i++;
-	}
-	return(0);
+	return(this->LastName);
 }
 
-void Contact::set_things()
+std::string Contact::GetNickName()
 {
-    std::string value;
-	while(1)
-	{
-		std::cout<<"Gimme the name"<<std::endl;
-		std::cin>>value;
-		if(check_name(value))
-		{
-			std::cout<<"Name can contain only letters"<<std::endl;
-			continue;
-		}
-		this->Name = value;
-		std::cout<<"Gimme the last name"<<std::endl;
-		std::cin>>value;
-		if(check_name(value))
-		{
-			std::cout<<"Last name can contain only letters"<<std::endl;
-			continue;
-		}
-		this->LastName = value;
-		std::cout<<"Gimme the Nickname"<<std::endl;
-		std::cin>>this->Nickname;
-		std::cout<<"Gimme the phone number"<<std::endl;
-		std::cin>>value;
-		if(check_number(value))
-		{
-			std::cout<<"Its a phone number not the Tax ID code"<<std::endl;
-			continue;
-		}
-		this->PhoneNumber = value;
-		std::cout<<"Now... tell me your deepest secre"<<std::endl;
-		std::cin>>this->DarkestSecret;
-		break;
-	}
+	return(this->Nickname);
+}
 
+std::string Contact::GetNumber()
+{
+	return(this->PhoneNumber);
+}
+
+std::string Contact::GetDarkestSecret()
+{
+	return(this->DarkestSecret);
+}
+
+void Contact::SetThings()
+{
+	std::cout<<"Gimme the name"<<std::endl;
+	std::cin>>this->Name;
+	std::cout<<"Gimme the last name"<<std::endl;
+	std::cin>>this->LastName;
+	std::cout<<"Gimme the Nickname"<<std::endl;
+	std::cin>>this->Nickname;
+	std::cout<<"Gimme the phone number"<<std::endl;
+	std::cin>>this->PhoneNumber;
+	std::cout<<"Now... tell me your deepest secre"<<std::endl;
+	std::cin>>this->DarkestSecret;
 }
