@@ -31,6 +31,7 @@ std::string PhoneBook::CropString(std::string string)
 void PhoneBook::PrintStr(std::string str)
 {
 	std::string tmp;
+	std::cout<<std::setw(10);
 	if(str.size() > 9)
 	{
 		tmp = this->CropString(str);
@@ -45,7 +46,7 @@ void PhoneBook::PrintAllContact()
 	int i = 0;
 	while(i < 8)
 	{
-		std::cout<<i<<"	";
+		std::cout<<i;
 		this->PrintStr(this->contact_list[i].GetName());
 		std::cout<<" | ";
 		this->PrintStr(this->contact_list[i].GetLastName());
