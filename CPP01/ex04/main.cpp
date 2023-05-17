@@ -1,14 +1,18 @@
 #include <iostream>
 #include <fstream>
 
-int main(int argc, char)
+int main(int argc, char **argv)
 {
     if(argc != 4)
         return(0);
     std::string filename;
     std::string stringtoreplace;
     std::string newstring;
+
+    filename = argv[1];
     std::ifstream inputFile(filename);
+    stringtoreplace = argv[2];
+    newstring = argv[3];
     if(!inputFile)
     {
         std::cout<< "ERROR" <<std::endl;
@@ -35,7 +39,5 @@ int main(int argc, char)
     }
     inputFile.close();
     outputFile.close();
-
-    std::cout<< "Nice move you filthy"<<std::endl;
     return(0);
 }
