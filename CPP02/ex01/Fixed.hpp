@@ -20,7 +20,7 @@
 		int		getRawBits(void) const;
 		void 	setRawsBits(int const raw);
 
-		float toFloat(int const raw) const;
+		float toFloat(void) const;
 		int toInt(void) const;
 	};
 

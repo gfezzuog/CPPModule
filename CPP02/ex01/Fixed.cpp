@@ -7,6 +7,19 @@ Fixed::Fixed() : _n(0)
     std::cout << "Constructor called"<<std::endl;
 }
 
+Fixed::Fixed(const int i)
+{
+    std::cout << "Constructor converter fron int to fixed called"<< std::endl;
+    this->_n = i * (1 << this->_nbits);
+}
+
+Fixed::Fixed(const float f)
+{
+    std::cout << "Constructor converter from float to fixed called" << std::endl;
+    this->_n = roundf(f * (1 << this->_nbits));
+}
+
+
 Fixed::~Fixed()
 {
     std::cout << "Destructor called" << std::endl;
@@ -39,4 +52,19 @@ void Fixed::setRawsBits(int const raw)
 {
     this->_n = raw;
     return ;
+}
+
+float Fixed::toFloat(void) const
+{
+    return(((float)this->_n / (float)(1<<this->_nbits)));
+}
+int Fixed::toInt(void)const
+{
+    return(roundf(this->toFloat()));
+}
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed)
+{
+	out << fixed.toFloat();
+	return (out);
 }
