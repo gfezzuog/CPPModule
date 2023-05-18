@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #ifndef FIXED_HPP
 #	define FIXED_HPP
 #	include <iostream>
@@ -18,3 +19,22 @@
 	};
 
 #endif
+=======
+#include <iostream>
+
+class Fixedn
+{
+private:
+	int fixedpoint;
+	static const int nbits = 8;
+
+public:
+	Fixedn();
+	Fixedn(int n);
+	Fixedn(const Fixedn &copyfixed);
+	~Fixedn();
+	Fixedn &operator=(const Fixedn &newfixed);
+	int getRawb(void) const;
+	void setRawb(int const raw);
+};
+>>>>>>> f5878d6f8822c3648153bfde54bd21ff45bf9046
