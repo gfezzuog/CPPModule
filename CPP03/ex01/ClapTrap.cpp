@@ -3,9 +3,9 @@
 ClapTrap::ClapTrap()
 {
     this->name = "ClapTrap";
-	this->HP = 10;
-	this->EP = 10;
-	this->ATK = 0;
+    this->HP = 100;
+    this->EP = 50;
+    this->ATK = 20;
 }
 
 ClapTrap::~ClapTrap()
@@ -15,9 +15,9 @@ ClapTrap::~ClapTrap()
 ClapTrap::ClapTrap(std::string name)
 {
     this->name = name;
-    this->HP = 10;
-	this->EP = 10;
-	this->ATK = 0;
+    this->HP = 100;
+    this->EP = 50;
+    this->ATK = 20;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &claptrap)
@@ -64,7 +64,7 @@ void ClapTrap::attack(const std::string &target)
         return ;
     else if(this->EP > 1)
     {
-        std::cout<<this->name<<" Attacks "<<target<<" causing "<<
+        std::cout<<"[ClapTrap] "<<this->name<<" Attacks "<<target<<" causing "<<
          this->ATK<<" points of damage!"<<std::endl;
         this->EP--;
         return ;
@@ -86,7 +86,7 @@ void ClapTrap::beRepaired(unsigned int amount)
             this->HP = 10;
         }
         std::cout<<this->name << " repaired it' self for "<< amount
-            <<" total Hp left "<< this->HP;
+            <<" total Hp left "<< this->HP << std::endl;
         this->EP--;
         return ;
     }
@@ -105,5 +105,5 @@ void ClapTrap::takeDamage(unsigned int amount)
     }
     this->HP -= amount;
     std::cout<<this->name<<" took "<<amount
-        << " damages he has "<<this->HP<<" left"<<std::endl;
+        << " damges he has "<<this->HP<<" left"<<std::endl;
 }
