@@ -2,6 +2,7 @@
 
 Dog::Dog()
 {
+    this->brain = new Brain();
     this->name = "Milú";
     this->type = "Dog";
     this->sound = "Bark Bark mother fucker";
@@ -10,6 +11,7 @@ Dog::Dog()
 
 Dog::Dog(std::string name)
 {
+    this->brain = new Brain();
     this->name = name;
     this->type = "Dog";
     this->sound = "Bark Bark mother fucker";
@@ -18,13 +20,15 @@ Dog::Dog(std::string name)
 
 Dog::~Dog()
 {
+    delete this->brain;
     std::cout << "Dog deleated"<<std::endl;
+
 }
 
 Dog::Dog(const Dog &dog)
 {
-    std::cout << "Dog Copied"<<std::endl;
     *this = dog;
+    std::cout << "Dog Copied"<<std::endl;
 }
 
 Dog &Dog::operator=(const Dog &dog)
@@ -32,6 +36,7 @@ Dog &Dog::operator=(const Dog &dog)
     this->type = dog.type;
     this->name = dog.name;
     this->sound = dog.sound;
+    this->brain = dog.brain;
 
     return *this;
 }

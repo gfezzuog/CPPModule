@@ -1,4 +1,4 @@
-NAME = Animal
+NAME = Brain
 
 CC = c++
 
@@ -9,7 +9,8 @@ FILES = Animal.cpp	  \
 		Dog.cpp 		\
 		WrongAnimal.cpp  \
 		WrongCat.cpp 	  \
-		main.cpp	       \
+		Brain.cpp		   \
+		main.cpp	        \
 
 OBJ = $(FILES:.cpp=.o)
 
