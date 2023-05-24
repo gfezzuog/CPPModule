@@ -14,5 +14,5 @@ WrongCat::WrongCat(const WrongCat &Wrongcat)
 
 WrongCat::~WrongCat()
 {
-	std::cout << "[WRONGCAT] " MAGENTA << this->type <<" goes to sleep." << std::endl;
+	std::cout << "[WRONGCAT] " << this->type <<" goes to sleep." << std::endl;
 }

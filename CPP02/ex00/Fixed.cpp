@@ -1,6 +1,5 @@
 #include "Fixed.hpp"
 
-<<<<<<< HEAD
 const int Fixed::_nbits = 8;
 
 Fixed::Fixed() : _n(0)
@@ -41,17 +40,3 @@ void Fixed::setRawsBits(int const raw)
     this->_n = raw;
     return ;
 }
-=======
-Fixedn::Fixedn()
-{}
-
-
-Fixedn::~Fixedn()
-{}
-
-Fixedn::Fixedn(int n)
-{
-    for(int i = 0; i > n; i++)
-        
-}
->>>>>>> f5878d6f8822c3648153bfde54bd21ff45bf9046

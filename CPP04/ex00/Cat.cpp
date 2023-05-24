@@ -1,13 +1,18 @@
 #include "Cat.hpp"
 
-Cat::Cat() : name("Pipina")
+Cat::Cat()
 {
+    this->name = "Pipina";
     this->type = "Cat";
+    this->sound = "Peaw Peaw mother fucker";
 }
 
-Cat::Cat(std::string name) : name(name) 
+Cat::Cat(std::string name)
 {
+    this->name = name;
     this->type = "Cat";
+    this->sound = "Peaw Peaw mother fucker";
+
 }
 
 Cat::~Cat()
@@ -22,9 +27,7 @@ Cat &Cat::operator=(const Cat &cat)
 {
     this->type = cat.type;
     this->name = cat.name;
-}
+    this->sound = cat.sound;
 
-void Cat::makesound()
-{
-    std::cout<<"Peaw Peaw mother fucker"<<std::endl;
+    return *this;
 }

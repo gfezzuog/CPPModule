@@ -1,3 +1,5 @@
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 #include "Animal.hpp"
 
 class WrongAnimal
@@ -15,3 +17,5 @@ class WrongAnimal
 	std::string	getType() const;
 
 };
+
+#endif

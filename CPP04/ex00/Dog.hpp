@@ -1,9 +1,8 @@
 #include "Animal.hpp"
 
-class Dog: virtual public Animal
+class Dog: public Animal
 {
     private:
-        std::string name;
 
     public:
         Dog();
@@ -11,6 +10,5 @@ class Dog: virtual public Animal
         Dog(const Dog &dog);
         ~Dog();
     
-    void makesound();
     Dog &operator=(const Dog &dog);
 };
