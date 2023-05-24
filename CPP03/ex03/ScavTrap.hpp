@@ -5,10 +5,6 @@
 class ScavTrap: virtual public ClapTrap
 {
     private:
-		std::string name;
-		unsigned int HP;
-		unsigned int EP;
-		unsigned int ATK;
 
     public:
         ScavTrap();

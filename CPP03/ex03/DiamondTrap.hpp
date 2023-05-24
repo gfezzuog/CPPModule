@@ -7,10 +7,7 @@
 class DiamondTrap: virtual public FragTrap, virtual public ScavTrap
 {
     private:
-        std::string name;
-        unsigned int ATK;
-        unsigned int EP;
-        unsigned int HP;
+
     public:
         DiamondTrap();
         DiamondTrap(std::string name);
