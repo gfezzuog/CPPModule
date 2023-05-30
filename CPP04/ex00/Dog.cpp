@@ -21,7 +21,7 @@ Dog::~Dog()
     std::cout << "Dog deleated"<<std::endl;
 }
 
-Dog::Dog(const Dog &dog)
+Dog::Dog(const Dog &dog) : Animal(dog)
 {
     std::cout << "Dog Copied"<<std::endl;
     *this = dog;

@@ -40,3 +40,8 @@ Dog &Dog::operator=(const Dog &dog)
 
     return *this;
 }
+
+void Dog::makeSound() const
+{
+    std::cout<< this->type << " is making this sound "<<  this->sound << std::endl;
+}

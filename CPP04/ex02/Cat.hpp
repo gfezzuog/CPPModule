@@ -2,7 +2,7 @@
 #define CAT_HPP
 #include "Animal.hpp"
 
-class Cat: virtual public Animal
+class Cat: public Animal
 {
     private:
         Brain *brain;
@@ -14,6 +14,7 @@ class Cat: virtual public Animal
         ~Cat();
     
     Cat &operator=(const Cat &cat);
+    void makeSound() const;
 };
 
 #endif

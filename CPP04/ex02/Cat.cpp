@@ -41,3 +41,8 @@ Cat &Cat::operator=(const Cat &cat)
 
     return *this;
 }
+
+void Cat::makeSound() const
+{
+    std::cout<< this->type << " is making this sound "<<  this->sound << std::endl;
+}

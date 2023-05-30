@@ -26,7 +26,7 @@ Cat::~Cat()
 
 }
 
-Cat::Cat(const Cat &cat)
+Cat::Cat(const Cat &cat) : Animal(cat)
 {
     *this = cat;
     std::cout << "Cat copied"<<std::endl;

@@ -6,7 +6,7 @@ WrongCat::WrongCat()
 	std::cout << "[WRONGCAT] "<< " It's a funny cat!" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &Wrongcat)
+WrongCat::WrongCat(const WrongCat &Wrongcat) : WrongAnimal(Wrongcat)
 {
 	*this = Wrongcat;
 	std::cout << "[WRONGCAT] "<<  " It's a funny cat!" << std::endl;

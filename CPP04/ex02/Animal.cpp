@@ -19,7 +19,3 @@ Animal &Animal::operator=(const Animal &animal)
     return *this;
 }
 
-void Animal::makeSound() const
-{
-    std::cout<< this->type << " is making this sound "<<  this->sound << std::endl;
-}
