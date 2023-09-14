@@ -3,19 +3,19 @@
 int main()
 {
 	Bureaucrat b("Bob", 1);
-	b.decrement_grade(7);
+	b.decrementGrade(7);
 	std::cout << b;
-	b.decrement_grade(35);
+	b.decrementGrade(35);
 	std::cout << b;
 	try
 	{
-		b.decrement_grade(120);
+		b.decrementGrade(120);
 	}
 	catch(const std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << "grade is: "<< b.get_grade() << std::endl;
+	std::cout << "grade is: "<< b.getGrade() << std::endl;
 	return (0);
 }

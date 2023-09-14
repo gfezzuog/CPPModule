@@ -1,11 +1,12 @@
-NAME = Bureaucrat
+NAME = Animal
 
 CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
 FILES = Bureaucrat.cpp	  \
-		main.cpp	       \
+		Form.cpp		   \
+		main.cpp	        \
 
 OBJ = $(FILES:.cpp=.o)
 
