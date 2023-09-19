@@ -1,16 +1,18 @@
 #include "Serializer.hpp"
 
-Serializer::Serializer() : _n(0)
+Serializer::Serializer() : data(NULL)
 {}
 
-Serializer::Serializer(int n)
+Serializer::Serializer(std::string str, int n)
 {
-	this->_n = n;
+	this->data = new Data;
+	this->data->str = str;
+	this->data->a = n;
 }
 
 Serializer &Serializer::operator=(const Serializer &serializer)
 {
-	this->_n = serializer._n;
+	this->data = serializer.data;
 	return(*this);
 }
 
@@ -22,7 +24,17 @@ Serializer::Serializer(const Serializer &serializer)
 Serializer::~Serializer()
 {}
 
-int Serializer::getN()
+uintptr_t Serializer::serialize(Data *ptr)
 {
-	return(this->_n);
+	return(reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data* Serializer::deserialize(uintptr_t raw)
+{
+	return(reinterpret_cast<Data *>(raw));
+}
+
+Data* Serializer::getData()
+{
+	return(this->data);
 }

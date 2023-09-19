@@ -1,20 +1,24 @@
 #ifndef SERIALIZER_HPP
 #define SERIALIZER_HPP
-
+#include <stdint.h>
 #include <iostream>
+
+struct	Data {std::string	str; int	a;};
 
 class Serializer
 {
 private:
-	int _n;
+	Data *data;
 public:
 	Serializer();
-	Serializer(int n);
+	Serializer(std::string str, int n);
 	Serializer(const Serializer &serializer);
 	~Serializer();
 
 	Serializer &operator=(const Serializer &serializer);
-	int getN();
+	uintptr_t serialize(Data *ptr);
+	Data *deserialize(uintptr_t raw);
+	Data *getData();
 };
 
 
