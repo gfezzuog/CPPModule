@@ -58,9 +58,9 @@ private:
 
 	ScalarConverter(const ScalarConverter &scalarconverter);
 	ScalarConverter();
-	ScalarConverter &operator=(const ScalarConverter &scalarconverter);
-
 public:
+
+	ScalarConverter &operator=(const ScalarConverter &scalarconverter);
 	ScalarConverter(const char *val);
 	~ScalarConverter();
 
@@ -69,7 +69,7 @@ public:
 	bool getOutRange(void) const;
 	bool getCharNotDisplayable(void) const;
 
-	bool OutOftRange(int type, double dVal);
+	bool OutOfRange(int type, double dVal);
 	void printIntType(std::ostream &out) const;
 	void printCharType(std::ostream &out) const;
 	void printFloatType(std::ostream &out) const;
