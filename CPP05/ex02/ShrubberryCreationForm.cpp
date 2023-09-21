@@ -1,5 +1,5 @@
 #include "ShrubberryCreationForm.hpp"
-
+#include <fstream>
 ShrubberryCreationForm::ShrubberryCreationForm()
 {
 }
@@ -10,7 +10,7 @@ ShrubberryCreationForm &ShrubberryCreationForm::operator=(const ShrubberryCreati
 	return (*this);
 }
 
-ShrubberryCreationForm::ShrubberryCreationForm(const ShrubberryCreationForm &sform)
+ShrubberryCreationForm::ShrubberryCreationForm(const ShrubberryCreationForm &sform) : AForm()
 {
 	*this = sform;
 }
@@ -26,22 +26,24 @@ ShrubberryCreationForm::~ShrubberryCreationForm()
 void ShrubberryCreationForm::execute(const Bureaucrat &bureaucrat) const
 {
 	std::ofstream file;
-
+	std::string file_name = this->_file + "_shrubberry";
 	permissionCheck(bureaucrat);
-	file.open((this->_file));
-	if (!file.good())
+	file.open(file_name.c_str(), std::ios::out);
+	if (file.is_open()) {
+		file << "              v .   ._, |_  .," << std::endl;
+		file << "       \'-._\\/  .  \\ /    |/_" << std::endl;
+		file << "           \\\\  _\\, y | \\//" << std::endl;
+		file << "     _\\_.___\\\\, \\\\/ -.\\||" << std::endl;
+		file << "       \'7-,--.\'._||  / / ," << std::endl;
+		file << "       /\'     \'-.\'./ / |/_.\'" << std::endl;
+		file << "                 |    |//" << std::endl;
+		file << "                 |_    /   " << _file << std::endl;
+		file << "                 |-   |" << std::endl;
+		file << "                 |   =|" << std::endl;
+		file << "                 |    |" << std::endl;
+		file << "----------------/ ,  . \\--------._" << std::endl;
+	}
+	else
 		throw FormCouldNotOpenFileException();
-	file << "              v .   ._, |_  .," << std::endl;
-	file << "       \'-._\\/  .  \\ /    |/_" << std::endl;
-	file << "           \\\\  _\\, y | \\//" << std::endl;
-	file << "     _\\_.___\\\\, \\\\/ -.\\||" << std::endl;
-	file << "       \'7-,--.\'._||  / / ," << std::endl;
-	file << "       /\'     \'-.\'./ / |/_.\'" << std::endl;
-	file << "                 |    |//" << std::endl;
-	file << "                 |_    /   " << _file << std::endl;
-	file << "                 |-   |" << std::endl;
-	file << "                 |   =|" << std::endl;
-	file << "                 |    |" << std::endl;
-	file << "----------------/ ,  . \\--------._" << std::endl;
 	file.close();
 }

@@ -53,6 +53,9 @@ class AForm
 	std::string getName(){return(this->_name);}
 	bool getSigned() const {return(this->_signed);}
 	int	getGradetoExec() const {return(this->_grade_to_exec);}
+	std::string 	getName() const {return(this->_name);}
+	int	getSign() const {return(this->_signed);}
+	int	getGradetoSign() const {return(this->_grade_to_sign);}
 	void permissionCheck(const Bureaucrat &bureaucrat) const;
 	virtual void execute(const Bureaucrat &bureaucrat) const = 0;
 };

@@ -1,18 +1,86 @@
-
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
+#include "ShrubberryCreationForm.hpp"
+#include "RobotoryRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
+//int	main(void)
+//{
+//	Bureaucrat				john("John", 1);
+//	Bureaucrat				Dan("Dan", 150);
+//
+//	ShrubberryCreationForm	shrub("Cozy");
+//	RobotomyRequestForm		robot("Mike");
+//	PresidentialPardonForm	pres("Jerry Smith");
+//
+//	try
+//	{
+//		john.signForm(shrub);
+//		//shrub.execute(Dan);
+//		shrub.execute(john);
+//	}
+//	catch (AForm::FormGradeTooHighException &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//	catch (AForm::FormGradeTooLowException &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//
+//	try
+//	{
+//		john.signForm(robot);
+//		//robot.execute(Dan);
+//		robot.execute(john);
+//	}
+//	catch (AForm::FormGradeTooHighException &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//	catch (AForm::FormGradeTooLowException &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//
+//	try
+//	{
+//		john.signForm(pres);
+//		//pres.execute(Dan);
+//		pres.execute(john);
+//	}
+//	catch (AForm::FormGradeTooHighException &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//	catch (AForm::FormGradeTooLowException &e)
+//	{
+//		std::cout << e.what() << std::endl;
+//	}
+//	return (0);
+//}
 int	main(void)
 {
-    Bureaucrat	bob("Bob", 11);
-    AForm 		f("BFF", 9, 9, &bob);
+ShrubberryCreationForm	shrub("Cozy");
+RobotomyRequestForm		robot("Mike");
+PresidentialPardonForm	pres("Jerry Smith");
+	Bureaucrat	bob("Bob", 11);
 
-    std::cout << bob << std::endl;
+	std::cout << shrub<< std::endl;
+	std::cout << robot << std::endl;
+	std::cout << pres << std::endl;
+	std::cout << bob << std::endl;
 
-    f.beSigned(bob);
-    std::cout<<"cazzo culo"<<std::endl;
-    bob.incrementGrade(1);
-    f.beSigned(bob);
-    bob.signForm(f);
+	bob.signForm(shrub);
+	bob.signForm(robot);
+	bob.signForm(pres);
+	bob.incrementGrade(1);
+	bob.signForm(shrub);
+	bob.signForm(robot);
+	bob.signForm(pres);
 
-    return (0);
+	std::cout << std::endl << shrub << std::endl;
+	std::cout << std::endl << robot << std::endl;
+	std::cout << std::endl << pres << std::endl;
+	return (0);
 }

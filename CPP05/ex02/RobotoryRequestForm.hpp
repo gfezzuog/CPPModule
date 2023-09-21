@@ -1,7 +1,7 @@
 #ifndef CPPMODULES_ROBOTOMYREQUESTFORM_HPP
 #define CPPMODULES_ROBOTOMYREQUESTFORM_HPP
 #include "Form.hpp"
-//#include <cstdlibg>
+#include <cstdlib>
 #include <ctime>
 
 class RobotomyRequestForm: public AForm {

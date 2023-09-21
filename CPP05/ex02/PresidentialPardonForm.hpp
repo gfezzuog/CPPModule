@@ -15,6 +15,8 @@ public:
 
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &pardonForm);
 };
+	std::ostream& operator<<(std::ostream& out,AForm &form);
+
 
 
 #endif

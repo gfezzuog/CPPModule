@@ -6,8 +6,15 @@ RobotomyRequestForm::RobotomyRequestForm(): AForm("Robotomy", 72, 45), _target("
 RobotomyRequestForm::RobotomyRequestForm(const std::string target): AForm("Robotomy", 72, 45), _target(target) {
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &robotomy) {
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &robotomy) : AForm()
+{
 	*this = robotomy;
+}
+
+RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &robotomy)
+{
+	static_cast<std::string>(this->_target) = static_cast<std::string>(robotomy._target);
+	return *this;
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {

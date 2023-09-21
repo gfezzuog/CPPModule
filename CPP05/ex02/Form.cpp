@@ -46,3 +46,12 @@ void AForm::beSigned(Bureaucrat &pollo)
 	else
 		this->_signed = true;
 }
+
+
+std::ostream& operator<<(std::ostream& out, AForm &Form) {
+	out << "Form [" << Form.getName() << "] info:" << std::endl;
+	out << "\t-sign status: " << Form.getSign() << std::endl;
+	out << "\t-sign grade required: " << Form.getGradetoSign() << std::endl;
+	out << "\t-form exec grade required: " << Form.getGradetoExec() << std::endl;
+	return (out);
+}
