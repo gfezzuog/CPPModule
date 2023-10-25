@@ -8,7 +8,7 @@ FILES = main.cpp \
 
 OBJ=$(FILES:.cpp=.o)
 
-HEADER = Template.hpp
+HEADER = Iter.hpp
 
 %.o:%.cpp $(HEADER)
 	$(CC) $(FLAGS) -c $< -o $@

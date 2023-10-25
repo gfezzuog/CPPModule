@@ -1,14 +1,14 @@
-NAME = ScalarConverter
+NAME = Template
 
 CC = c++
 
 FLAGS = -std=c++98 -Wall -Wextra -Werror
 
-FILES = main.cpp ScalarConverter.cpp \
+FILES = main.cpp \
 
 OBJ=$(FILES:.cpp=.o)
 
-HEADER = ScalarConverter.hpp
+HEADER = Template.hpp
 
 %.o:%.cpp $(HEADER)
 	$(CC) $(FLAGS) -c $< -o $@
